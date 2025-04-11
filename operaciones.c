@@ -61,9 +61,9 @@ int main(){
     uint32_t valor1 = 0xe0000000;
     uint32_t valor2 = 0x00000007;
     uint32_t mascara_superior = 0xE0000000;
-    uint32_t mascara_inferior = 0x0000000E;
+    uint32_t mascara_inferior = 0x00000007;
 
-    uint32_t parte_superior_1 = valor1 & mascara_superior;
+    uint32_t parte_superior_1 = (valor1 & mascara_superior) >> 29;
     uint32_t parte_inferior_2 = valor2 & mascara_inferior;
 
     printf("los bits superiores son %u\n", parte_superior_1);
