@@ -10,6 +10,8 @@ typedef struct {
 
 }monstruo_t;
 
+monstruo_t evolucion(monstruo_t jefe);
+
 monstruo_t jefes[5] = {
     [0] = {"King Slime", 2000, 40, 10},
     [1] = {"Eye of Cthulhu", 2800, 15, 12},
@@ -21,12 +23,32 @@ monstruo_t jefes[5] = {
 int main(){
     for (int i = 0; i < 5; i++)
     {
-        printf("Jefe: %s    ", jefes[i].name);
-        printf("Vida: %d    ", jefes[i].vida);
-        printf("Ataque: %f    ", jefes[i].ataque);
-        printf("Defensa: %f\n", jefes[i].defensa);
+        printf("Jefe: %-20s | Vida: %-6d | Ataque: %-5.1f | Defensa: %-5.1f\n", jefes[i].name,
+        jefes[i].vida, jefes[i].ataque, jefes[i].defensa);
     };
-    return 0;
+    printf("\n\n");
+    printf("Monstruos evolucionados:\n\n");
+
+    for (int i = 0; i < 5; i++)
+    {
+        monstruo_t jefe_evolucionado = evolucion(jefes[i]);
+
+        printf("Jefe: %-20s | Vida: %-6d | Ataque: %-5.1f | Defensa: %-5.1f\n", jefe_evolucionado.name,
+        jefe_evolucionado.vida, jefe_evolucionado.ataque, jefe_evolucionado.defensa);
+    }
+    
 }
 
-
+monstruo_t evolucion(monstruo_t jefe){
+ 
+    if (jefe.name == "Empress of Light")
+    {
+        jefe.ataque += 200;
+        jefe.defensa += 100;
+    }else{
+        jefe.ataque += 10;
+        jefe.defensa += 10;
+    }
+    
+    return jefe;
+}
