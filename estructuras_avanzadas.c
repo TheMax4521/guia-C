@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define NAME_LEN 50
 
@@ -41,7 +42,7 @@ int main(){
 
 monstruo_t evolucion(monstruo_t jefe){
  
-    if (jefe.name == "Empress of Light")
+    if (strcmp(jefe.name, "Empress of Light") == 0)
     {
         jefe.ataque += 200;
         jefe.defensa += 100;
