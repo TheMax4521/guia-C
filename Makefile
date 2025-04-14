@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic
-TARGET = tamaño hola enteros operaciones estructuras
+TARGET = tamaño hola enteros operaciones estructuras estructuras_avanzadas
 
 all: $(TARGET)
 
@@ -33,6 +33,12 @@ estructuras: estructuras.o
 
 estructuras.o: estructuras.c
 	$(CC) $(CFLAGS) -c estructuras.c -o estructuras.o
+
+estructuras_avanzadas: estructuras_avanzadas.o
+	$(CC) $(CFLAGS) estructuras_avanzadas.o -o estructuras_avanzadas
+
+estructuras_avanzadas.o: estructuras_avanzadas.c
+	$(CC) $(CFLAGS) -c estructuras_avanzadas.c -o estructuras_avanzadas.o
 
 clean:
 	rm *.o $(TARGET)
