@@ -1,44 +1,50 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic
-TARGET = tamaño hola enteros operaciones estructuras estructuras_avanzadas
+TARGET = tamaño hola enteros operaciones estructuras estructuras_avanzadas punteros
 
 all: $(TARGET)
 
 hola: hola.o
-	$(CC) $(CFLAGS) hola.o -o hola
+	$(CC) $(CFLAGS) $^ -o $@
 
 hola.o: hola.c
-	$(CC) $(CFLAGS) -c hola.c -o hola.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 tamaño: tamaño.o
-	$(CC) $(CFLAGS) tamaño.o -o tamaño
+	$(CC) $(CFLAGS) $^ -o $@
 
 tamaño.o: tamaño.c
-	$(CC) $(CFLAGS) -c tamaño.c -o tamaño.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 enteros: enteros.o
-	$(CC) $(CFLAGS) enteros.o -o enteros
+	$(CC) $(CFLAGS) $^ -o $@
 
 enteros.o: enteros.c
-	$(CC) $(CFLAGS) -c enteros.c -o enteros.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 operaciones: operaciones.o
-	$(CC) $(CFLAGS) operaciones.o -o operaciones
+	$(CC) $(CFLAGS) $^ -o $@
 
 operaciones.o: operaciones.c
-	$(CC) $(CFLAGS) -c operaciones.c -o operaciones.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 estructuras: estructuras.o
-	$(CC) $(CFLAGS) estructuras.o -o estructuras
+	$(CC) $(CFLAGS) $^ -o $@
 
 estructuras.o: estructuras.c
-	$(CC) $(CFLAGS) -c estructuras.c -o estructuras.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 estructuras_avanzadas: estructuras_avanzadas.o
-	$(CC) $(CFLAGS) estructuras_avanzadas.o -o estructuras_avanzadas
+	$(CC) $(CFLAGS) $^ -o $@
 
 estructuras_avanzadas.o: estructuras_avanzadas.c
-	$(CC) $(CFLAGS) -c estructuras_avanzadas.c -o estructuras_avanzadas.o
+	$(CC) $(CFLAGS) -c $< -o $@
+
+punteros: punteros.o
+	$(CC) $(CFLAGS) $^ -o $@
+
+punteros.o: punteros.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm *.o $(TARGET)
