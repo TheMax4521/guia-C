@@ -7,11 +7,11 @@ int main(){
     char *p = palabra;
     printf("Ingrese string:");
     scanf("%s", palabra);
-    for (int i = 0; palabra[i] != '\0'; i++)
+    for (int i = 0; *p != '\0'; i++)
     {
         palabra[i] = toupper(palabra[i]);
-        printf("%s", palabra);
     }
+    printf("%s", palabra);
     printf("\n");
     
 }
