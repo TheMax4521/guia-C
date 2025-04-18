@@ -9,7 +9,7 @@ int main(){
     scanf("%s", palabra);
     for (int i = 0; *p != '\0'; i++)
     {
-        palabra[i] = toupper(palabra[i]);
+        palabra[i] = toupper(*p);
     }
     printf("%s", palabra);
     printf("\n");
